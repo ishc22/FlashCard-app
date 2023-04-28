@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %} Log In {% endblock %}
+
+{% block header %} 
+{% endblock %}
+
+{% block content %} 
+<div class="container">
+    <div class="login-page">
+      <!-- <div class="avatar">
+        <img src="../static/images/logo.jpeg" alt="Avatar">
+      </div> -->
+      <div class="form">
+      <h2>Log In</h2>
+      <form method="post">
+
+        {{ form.csrf_token }}
+
+        {{ form.email(id="email", class="form-control", placeholder="Enter Email") }}
+
+        {{ form.password(id="password", class="form-control", placeholder="Enter Password") }}
+          
+        <div id="submit"> 
+          {{ form.submit() }}
+        </div>
+
+      </form>
+      </div>
+    </div>
+</div>
+{% endblock %}

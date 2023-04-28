@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} Create Card  {% endblock %}
+
+{% block header %} 
+{% endblock %}
+
+{% block content %} 
+<div class="container">
+    <div class="">
+      <div class="form">
+        <h2>Please type the title of your deck</h2> <br>
+        <form method="post">
+
+          {{ form.csrf_token }}
+
+          {{ form.question(id="card_question", class="form-control", placeholder="Enter Question ") }}
+
+          {{ form.answer(id="card_answer", class="form-control", placeholder="Enter Answer") }}
+
+
+            <div id="submit">
+            {{ form.submit() }}
+            </div>
+        </form>
+      </div>
+    </div>
+</div>
+{% endblock %}

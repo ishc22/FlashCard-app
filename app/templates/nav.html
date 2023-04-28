@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row" >
+      <div class="col "></div>
+      <nav class="navbar navbar-expand-lg bg-light col mt-4 text-center">
+        <div class="text-center">
+          <button class="navbar-toggler mx-auto pt-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+
+              {% if current_user.is_authenticated %}
+  
+              <li class="nav-item">
+                <a class="nav-link" href="/decks">Decks</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">LogOut</a>
+              </li>
+
+              {% else %}
+
+              <li class="nav-item">
+                <a class="nav-link" href="/signup">SignUp</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">LogIn</a>
+              </li>
+
+              {% endif %}
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="col"></div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

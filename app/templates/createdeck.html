@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} Create Deck {% endblock %}
+
+{% block header %} 
+{% endblock %}
+
+{% block content %} 
+<div class="container">
+    <div class="">
+      <!-- <div class="avatar">
+        <img src="../static/images/logo.jpeg" alt="Avatar">
+      </div> -->
+      <div class="form">
+        <h2>Please type the title of your deck</h2> <br>
+
+        <form method="post">
+
+          {{ form.csrf_token }}
+
+          {{ form.deck_name(id="deck_name", class="form-control", placeholder="Enter Deck Name") }}
+
+            <div id="submit">
+              {{ form.submit() }}
+            </div>
+
+        </form>
+      </div>
+    </div>
+</div>
+{% endblock %}

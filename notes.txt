@@ -1,0 +1,8 @@
+Use flask  wtf, its a flask extension for wtf package. 
+
+use wtf forms to validate users information along with a crf token, Once validated it's posted to the server
+
+
+Orm called flaskSQL ALchemy, it's a flask extension for sql ALchemy package 
+
+<!-- {% if deck.user == current_user %}  (to only display if user is logged in, use when sharing.) -->

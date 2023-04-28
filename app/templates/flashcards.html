@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} Flashcard {% endblock %}
+
+{% block header %} 
+{% endblock %}
+
+{% block content %} 
+      <div class="row">
+         <div class="column-3">
+            <a href="/createcard" class="btn btn-primary">Add Card</a>
+            <a href="{{ url_for('createcard', deck_id=deck.id) }}">Create Card</a>
+
+         </div>
+      </div>
+      <div class="row justify-content-center">
+      {% for card in cards  %}
+      <!-- Will only show decks if user was the one who created them. -->
+         {% if card.deck.user == current_user %}
+              <div id="deckrow" class="col-4 display:inline text-center">
+                  <div class="card-deck ">
+                     <div class="card px-5 py-5 my-3">
+                        <div class="card-body">
+                           <h3 class="card-title"> {{ flashcards.question }}</h3> <br>
+                            <h4 class="card-title"> {{ flashcards.answer }}</h4> <br>
+                              <a href="#" class="btn btn-primary">Edit</a>
+                              <a href="#" class="btn btn-primary">Delete</a>
+                        </div>
+                     </div>  
+                  </div> 
+            </div>
+         {% endif %}  
+      {% endfor %}  
+      </div>  
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %} Deck {% endblock %}
+
+{% block header %} 
+{% endblock %}
+
+{% block content %} 
+      <div class="row">
+         <div class="column-3">
+            <a href="/createdeck" class="btn btn-primary">Add deck</a>
+            <a href="/editdeckspage" class="btn btn-primary">Edit deck</a>
+
+         </div>
+      </div>
+      <div class="row justify-content-center">
+      {% for deck in decks  %}
+      <!-- Will only show decks if user was the one who created them. -->
+         {% if deck.user == current_user %}
+              <div id="deckrow" class="col-4 display:inline text-center">
+                  <div class="card-deck ">
+                     <div class="card px-5 py-5 my-3">
+                        <div class="card-body">
+                           <h3 class="card-title"> {{ deck.deck_name }}</h5> <br>
+                              <a href="/flashcards" class="btn btn-primary">Start</a>
+                              <!-- <a href="{{ url_for('createcard', deck_id=deck.id) }}">Create Card</a> -->
+                              <a href="#" class="btn btn-primary">Edit/Add Cards</a>
+                        </div>
+                     </div>  
+                  </div> 
+            </div>
+         {% endif %}  
+      {% endfor %}  
+      </div>  
+{% endblock %}
+
+
+
+
+<!-- <div class="container">
+   <div class="row align-items-start mt-5">
+      <div class="col-sm-3 align-items-start">
+         <div class="card text-center" style="height: 20rem;">
+            <div class="card-body mt-5">
+               <h3 class="card-title"> {{ deck.deck_name }}</h5> <br>
+               <a href="#" class="btn btn-primary">Start</a>
+               <a href="#" class="btn btn-primary">Delete</a>
+            </div>
+         </div>
+      </div>
+   </div>   
+</div> -->
+
+<!-- <div class="card-columns">
+   <div class="card">
+     <div class="card-body">
+      <h3 class="card-title"> {{ deck.deck_name }}</h5> <br>
+         <h3 class="card-title"> {{ deck.deck_name }}</h5> <br>
+         <a href="#" class="btn btn-primary">Start</a>
+         <a href="#" class="btn btn-primary">Delete</a>
+     </div>
+   </div> -->
